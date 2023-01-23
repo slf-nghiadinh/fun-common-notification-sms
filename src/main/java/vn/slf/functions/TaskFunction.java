@@ -3,22 +3,22 @@ package vn.slf.functions;
 import com.slf.core.services.repositories.DummyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import vn.slf.models.SMSRequest;
-import vn.slf.models.SMSResponse;
+import vn.slf.models.TaskRequest;
+import vn.slf.models.TaskResponse;
 
 import java.util.function.Function;
 import java.util.logging.Logger;
 
 @Component
-public class SMSFunction implements Function<SMSRequest, SMSResponse> {
+public class TaskFunction implements Function<TaskRequest, TaskResponse> {
 
-    private static final Logger LOG = Logger.getLogger(String.valueOf(SMSFunction.class));
+    private static final Logger LOG = Logger.getLogger(String.valueOf(TaskFunction.class));
     @Autowired
     DummyRepository dummyService;
 
     @Override
-    public SMSResponse apply(SMSRequest request) {
-        SMSResponse response = new SMSResponse();
+    public TaskResponse apply(TaskRequest request) {
+        TaskResponse response = new TaskResponse();
         response.setResult(dummyService.get());
 
         LOG.info("[INFO] " + response.getResult());
