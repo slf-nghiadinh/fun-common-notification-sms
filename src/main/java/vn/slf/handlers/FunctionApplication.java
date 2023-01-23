@@ -3,9 +3,9 @@ package vn.slf.handlers;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import vn.slf.functions.EmailFunction;
-import vn.slf.models.EmailRequest;
-import vn.slf.models.EmailResponse;
+import vn.slf.functions.SMSFunction;
+import vn.slf.models.SMSRequest;
+import vn.slf.models.SMSResponse;
 
 import java.util.function.Function;
 
@@ -17,7 +17,7 @@ public class FunctionApplication {
     }
 
     @Bean
-    public Function<EmailRequest, EmailResponse> handle() {
-        return new EmailFunction();
+    public Function<SMSRequest, SMSResponse> handle() {
+        return new SMSFunction();
     }
 }
